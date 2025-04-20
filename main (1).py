@@ -30,6 +30,13 @@ chat_history.append({
 while True:
     user_input = input("enter your prompt :  ")
 
+    if user_input == 'clear':
+        chat_history = []
+        chat_history.append({"role": "system", "content": personas[user_persona_input]})
+
+        print("Chat history cleared")
+        continue
+
     chat_history.append({
         "role": "user",
         "content": user_input
